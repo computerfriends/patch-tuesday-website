@@ -19,15 +19,15 @@
         $.getJSON('https://isitpatchtuseday.com/api/v1/patchtuseday')
             .done(function(response) {
               if ($(response.isPatchTuseday) === true) {
-                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: YES</p>"
+                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: <strong>YES</strong></p>"
               } else {
-                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: NO</p>"
+                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: <strong>NO</strong></p>"
               }
 
               if ($(response.isBWeek) === true) {
-                  document.getElementById("bWeek").innerHTML = "<p>B week: YES</p>"
+                  document.getElementById("bWeek").innerHTML = "<p>B week: <strong>YES</strong></p>"
               } else {
-                  document.getElementById("bWeek").innerHTML = "<p>B week: NO</p>"
+                  document.getElementById("bWeek").innerHTML = "<p>B week: <strong>NO</strong></p>"
               }
             })
             .fail(function(jqXHR, textStatus, error) {
@@ -48,7 +48,7 @@ body {
 </style>
   <body>
     <div class="container">
-    <div class="window" style="margin: 32px; width: 500px">
+    <div class="window" style="margin: 32px; width: 350px">
       <div class="title-bar">
         <div class="title-bar-text">
           Is it Patch Tuseday?
@@ -68,6 +68,7 @@ body {
         </section>
       </div>
     </div>
+    </div>
     <div class="window" style="width: 320px">
       <div class="title-bar">
         <div class="title-bar-text">Pro Tip!</div>
@@ -75,8 +76,8 @@ body {
       <div class="window-body">
         <p><strong> Use the API to let your scripts detect if it's Patch Tuseday! </strong></p>
         <p1>
-        GET https://isitpatchtuseday.com/api/v1/patchtuseday <br>
-        will return <br>
+        GET https://isitpatchtuseday.com/api/v1/patchtuseday <br><br>
+        will return <br><br>
         {"isPatchTuseday":bool,"isBWeek":bool}
         </p1>
       </div>
@@ -85,7 +86,6 @@ body {
         <p class="status-bar-field"><a href="https://github.com/computerfriends">View on GitHub</a></p>
         <p class="status-bar-field"><a href="https://www.youtube.com/watch?v=dmEvPZUdAVI">Return to DOS</a></p>
       </div>
-    </div>
     </div>
   </body>
 </html>
