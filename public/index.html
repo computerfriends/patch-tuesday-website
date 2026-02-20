@@ -5,6 +5,13 @@
     <meta charset="UTF-8" />
 
     <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+    <style>
+    .center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    </style>
     <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 
     <script>
@@ -12,15 +19,15 @@
         $.getJSON('https://isitpatchtuseday.com/api/v1/patchtuseday')
             .done(function(response) {
               if ($(response.isPatchTuseday) === true) {
-                  document.getElementById("pTuseday").innerHTML =  <p>Patch Tuseday: YES</p>
+                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: YES</p>"
               } else {
-                  document.getElementById("pTuseday").innerHTML =  <p>Patch Tuseday: NO</p>
+                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: NO</p>"
               }
 
               if ($(response.isBWeek) === true) {
-                  document.getElementById("bWeek").innerHTML =  <p>B week: YES</p>
+                  document.getElementById("bWeek").innerHTML = "<p>B week: YES</p>"
               } else {
-                  document.getElementById("bWeek").innerHTML =  <p>B week: NO</p>
+                  document.getElementById("bWeek").innerHTML = "<p>B week: NO</p>"
               }
             })
             .fail(function(jqXHR, textStatus, error) {
