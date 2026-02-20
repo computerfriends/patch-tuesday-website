@@ -8,21 +8,30 @@
     <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
 
     <script>
-        $.getJSON('https://isitpatchtuseday.com/api/v1/patchtuseday')
-
-        var tuseday 
-        if ($(response.isPatchTuseday) === true) {
-            tuseday = "YES"
-        } else {
-            tuseday = "NO"
-        }
-
+        var tuseday
         var bWeek
-        if ($(response.isBWeek) === true) {
-            bWeek = "YES"
-        } else {
-            bWeek = "NO"
-        }
+
+        $.getJSON('https://isitpatchtuseday.com/api/v1/patchtuseday')
+            .done(function(data) {
+                if ($(response.isPatchTuseday) === true) {
+                    tuseday = "YES"
+                } else {
+                    tuseday = "NO"
+                }
+
+                if ($(response.isBWeek) === true) {
+                    bWeek = "YES"
+                } else {
+                    bWeek = "NO"
+                }
+            })
+            .fail(function(jqXHR, textStatus, error) {
+                console.log("Error!" + error)
+                tuseday = error
+                bWeek = error
+            })
+
+        
 
 
     </script>
