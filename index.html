@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>98.css example</title>
+    <meta charset="UTF-8" />
+
+    <link rel="stylesheet" href="https://unpkg.com/98.css@0.1.4/build/98.css" />
+    <script src="https://code.jquery.com/jquery-4.0.0.js"></script>
+
+    <script>
+        $.getJSON('https://isitpatchtuseday.com/api/v1/patchtuseday')
+
+        var tuseday 
+        if ($(response.isPatchTuseday) === true) {
+            tuseday = "YES"
+        } else {
+            tuseday = "NO"
+        }
+
+        var bWeek
+        if ($(response.isBWeek) === true) {
+            bWeek = "YES"
+        } else {
+            bWeek = "NO"
+        }
+
+
+    </script>
+
+  </head>
+
+  <body>
+    <div class="window" style="margin: 32px; width: 500px">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          Is it Patch Tuseday?
+        </div>
+
+        <div class="title-bar-controls">
+          <button aria-label="Minimize"></button>
+          <button aria-label="Maximize"></button>
+          <button aria-label="Close"></button>
+        </div>
+      </div>
+      <div class="window-body">
+        <p>Patch Tuseday: <script type="text/javascript">document.write(tuseday)</script></p>
+        <p>B week: <script type="text/javascript">document.write(bWeek)</script></p>
+        <section class="field-row" style="justify-content: flex-end">
+          <button>OK</button>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
