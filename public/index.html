@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Is it Patch Tuseday?</title>
+    <title>Is it Patch Tuesday?</title>
     <meta charset="UTF-8" />
 
     <link rel="stylesheet" href="https://unpkg.com/98.css" />
@@ -20,12 +20,12 @@
 
     <script>
 
-        $.getJSON('https://isitpatchtuseday.com/api/v1/patchtuseday')
+        $.getJSON('https://isitpatchtuesday.app/api/v1/patchtuesday')
             .done(function(response) {
-              if ($(response.isPatchTuseday) === true) {
-                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: <strong>YES</strong></p>"
+              if ($(response.isPatchTuesday) === true) {
+                  document.getElementById("pTuesday").innerHTML = "<p>Patch Tuesday: <strong>YES</strong></p>"
               } else {
-                  document.getElementById("pTuseday").innerHTML = "<p>Patch Tuseday: <strong>NO</strong></p>"
+                  document.getElementById("pTuesday").innerHTML = "<p>Patch Tuesday: <strong>NO</strong></p>"
               }
 
               if ($(response.isBWeek) === true) {
@@ -36,7 +36,7 @@
             })
             .fail(function(jqXHR, textStatus, error) {
               console.log("Error calling API!" + error)
-              document.getElementById("pTuseday").innerHTML =  "<p>Patch Tuseday: Error calling API!</p>"
+              document.getElementById("pTuesday").innerHTML =  "<p>Patch Tuesday: Error calling API!</p>"
               document.getElementById("bWeek").innerHTML =  "<p>B week: Error calling API!</p>"
 
 
@@ -50,7 +50,7 @@
     <div class="window" style="margin: 32px; width: 350px">
       <div class="title-bar">
         <div class="title-bar-text">
-          Is it Patch Tuseday?
+          Is it Patch Tuesday?
         </div>
 
         <div class="title-bar-controls">
@@ -60,7 +60,7 @@
         </div>
       </div>
       <div class="window-body">
-        <p id="pTuseday">Patch Tuseday: Loading...</p>
+        <p id="pTuesday">Patch Tuesday: Loading...</p>
         <p id="bWeek">B week: Loading...</p>
         <section class="field-row" style="justify-content: flex-end">
           <button>OK</button>
@@ -72,11 +72,11 @@
         <div class="title-bar-text">Pro Tip!</div>
       </div>
       <div class="window-body">
-        <p><strong> Use the API to let your scripts detect if it's Patch Tuseday! </strong></p>
+        <p><strong> Use the API to let your scripts detect if it's Patch Tuesday! </strong></p>
         <p1>
-        GET https://isitpatchtuseday.com/api/v1/patchtuseday <br><br>
+        GET https://isitpatchtuesday.app/api/v1/patchtuesday <br><br>
         will return <br><br>
-        {"isPatchTuseday":bool,"isBWeek":bool}
+        {"isPatchTuesday":bool,"isBWeek":bool}
         </p1>
       </div>
       <div class="status-bar">
