@@ -1,9 +1,0 @@
-name = "patch-tuesday-website"
-
-compatibility_date = "2026-02-19"
-
-workers_dev = false
-
-[assets]
-directory = "./public"
-
