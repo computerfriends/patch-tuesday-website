@@ -21,13 +21,13 @@
 
         $.getJSON('https://isitpatchtuesday.app/api/v1/patchtuesday')
             .done(function(response) {
-              if ($(response.isPatchTuesday)) {
+              if (response.isPatchTuesday === true) {
                   document.getElementById("pTuesday").innerHTML = "<p>Patch Tuesday: <strong>YES</strong></p>"
               } else {
                   document.getElementById("pTuesday").innerHTML = "<p>Patch Tuesday: <strong>NO</strong></p>"
               }
 
-              if ($(response.isBWeek)) {
+              if (response.isBWeek === true) {
                   document.getElementById("bWeek").innerHTML = "<p>B week: <strong>YES</strong></p>"
               } else {
                   document.getElementById("bWeek").innerHTML = "<p>B week: <strong>NO</strong></p>"
